@@ -1,0 +1,84 @@
+//Create 10 BDD test cases for checkout (no need to automate these, just add them to a text file inside the project)
+
+1. Verify the user can access the homepage
+Given I am on the homepage
+When I visit the homepage
+Then I should see the URL includes "teststoreforsouthafri.nextbasket.shop"
+
+2. Verify the user email is displayed
+Given I am on the homepage
+When I visit the homepage
+Then I should see my email "iris.dizon@nextbasket.com" displayed in the header
+
+3. Accept cookies
+Given I am on the homepage
+When the cookie banner is displayed
+Then I accept the cookies
+
+4. Add a product to the basket
+Given I am on the homepage
+When I select the first non-promo product
+And I add it to the basket
+Then I should see a confirmation message that the product has been added to the basket
+
+5. Verify product details in the basket
+Given I have added a product to the basket
+When I go to the basket
+Then I should see the product name and price in the basket
+
+6. Proceed to checkout
+Given I am in the basket
+When I click on "Proceed to Checkout"
+Then I should be taken to the checkout page
+
+7. Checkout as a guest
+Given I am on the checkout page
+When I enter my email to continue as a guest
+Then I should be able to proceed to enter my personal details
+
+8. Fill in personal details and delivery address
+Given I am on the checkout page
+When I enter my personal details and delivery address
+Then I should see the delivery address details are correctly filled
+
+9. Confirm the order
+Given I have filled in all required details
+When I click on "Confirm order"
+Then I should see the confirmation page with the message "Thank you!"
+
+10. Verify order confirmation details
+Given I am on the order confirmation page
+When my order is placed successfully
+Then I should see a confirmation message and an email confirmation with the order details
+
+//Describe at least two bugs (BDD Steps, add them to a text file inside the project)
+
+Bug 1: Missing "Continue as Guest" Button
+Scenario: "Continue as Guest" button is not displayed on the checkout page
+Given I am on the checkout page
+When I enter my email address
+Then I should see a "Continue as Guest" button
+But the "Continue as Guest" button is not displayed
+
+Steps to Reproduce:
+
+Add a product to the basket.
+Proceed to checkout.
+Enter an email address in the "Guest" section.
+Observe the absence of the "Continue as Guest" button.
+Impact: Users are unable to proceed with the checkout process as guests, leading to potential cart abandonment.
+
+Bug 2: Incorrect Product Price Displayed in Basket
+Scenario: Product price displayed in the basket does not match the product price on the product page
+Given I have added a product to the basket
+When I view the product price on the product page
+And I view the product price in the basket
+Then the prices should match
+But the prices do not match
+
+Steps to Reproduce:
+
+Add a product to the basket from the product page.
+Note the product price on the product page.
+Go to the basket and check the product price.
+Impact: Incorrect pricing information can lead to customer dissatisfaction and potential revenue loss if customers abandon their carts due to pricing inconsistencies.
