@@ -16,9 +16,9 @@ This project is a test automation suite using Cypress to ensure the accuracy, re
 
 ## Installation
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/cypress-project.git
+# Clone the repository:
+
+   git clone https://github.com/waqas9462/NextBasketTesting.git
    cd cypress-project
 
 # Install dependencies: npm install
